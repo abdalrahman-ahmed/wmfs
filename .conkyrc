@@ -1,0 +1,37 @@
+out_to_console yes
+out_to_x no
+background yes
+update_interval 1
+total_run_times 0
+no_buffers yes
+
+default_color FFFFFF #blanc
+default_shade_color 333333
+default_outline_color black
+
+use_xft yes
+
+color0 EEEEEE #normal
+color1 B3B3B3 #gris
+color2 FDA53C #orange
+color3 E8DD9E #jaune
+color4 A6D4E0 #bleu
+color5 FFA500 #camel
+color6 BDE077 #vert
+color7 D8ADFF #mauve
+color8 FF95D1 #rose
+
+
+TEXT
+^s[right;\#BDE077; $uptime]\
+^s[right;\#444444; | ]\
+^s[right;\#BBBBBB; HDD:] ^s[right;\#A6D4E0; ${fs_used_perc /}% ] ^p[right;8;10;0;${fs_used_perc /};100;\#445544;\#A6D4E0;ckyhdd](1;spawn;urxvtc -e ranger)\
+^s[right;\#444444; | ]\
+^s[right;\#BBBBBB; BAT:] ^s[right;\#FDA53C; ${battery_percent BAT0 /}% ] ^p[right;8;10;0;${battery_percent BAT0 /};100;\#514028;\#FDA53C;ckybat01]\
+^s[right;\#444444; | ]\
+^s[right;\#BBBBBB; WL:] ^s[right;\#E8DD9E; ${wireless_essid eth1}]\
+^s[right;\#444444; | ]\
+^s[right;\#BBBBBB; VOL:] ^s[right;\#BDE077; ${exec amixer get Master -M | grep -oE "[[:digit:]]*%"} ]\
+^p[right;40;8;1;${exec amixer get Master | tail -1 | sed 's/.*\[\([0-9]*%\)\].*/\1/' | cut -d% -f1};100;\#BDE077;\#4A5A2E](1;spawn;urxvtc -e cmus)\
+^s[right;\#444444; | ]\
+^s[right;\#CCCCCC; ${time %a %d %b}] ^s[right;\#A6D4E0; ${time %H:%M}  ]\

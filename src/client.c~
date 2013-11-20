@@ -1119,8 +1119,6 @@ client_winsize(struct client *c, struct geo *g)
      c->wgeo.h = oh = tmp.h - (c->border + c->tbarw);
      c->wgeo.w = ow = tmp.w - (c->border << 1);
 
-     /* client_geo_hints(&c->wgeo, (int*)c->sizeh); */
-     if(c->flags & CLIENT_FREE)
      client_geo_hints(&c->wgeo, (int*)c->sizeh);
 
      /* Check possible problem for tile integration */

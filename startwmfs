@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+nitrogen --restore &	# wallpaper
+# nm-applet &          	# NetworManager
+urxvtd -q -o -f
+
+sleep 1s &
+conky | while true; read line; do wmfs -c status "testbar $line"; done &
+
+#(sleep 1s && urxvtc -hold -e shortcuts) &
+
+exec wmfs

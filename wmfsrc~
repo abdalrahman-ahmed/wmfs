@@ -5,17 +5,17 @@
 # Possible file inclusion:
 # @include "file"
 
-@include "~/.config/wmfs/wmfs_rules"
+# @include "~/.config/wmfs/wmfs-rc/rules"
 
 # Multi theme section
 [themes]
 
     [theme]
         name = "greygreen"
-        font = "-artwiz-snap-*-*-*-*-10-*-*-*-*-*-iso8859-1"
-        # font = "-xos4-terminus-medium-r-normal--12-120-72-72-c-60-iso8859-1"
+        # font = "-misc-ohsnap-medium-r-normal--12-87-100-100-c-70-iso8859-1"
+        font = "-xos4-terminus-medium-r-normal--12-120-72-72-c-60-iso8859-1"
         # Bars
-        bars_width = 18
+        bars_width = 19
         bars_fg = "#CCCCCC"
         bars_bg = "#222222"
         
@@ -252,33 +252,33 @@
 
 [keys]
 
-  [key] mod = {"Super"} key = "Return" func = "spawn" cmd = "urxvtc" [/key]
+  [key] mod = {"Super"} key = "Return" func = "spawn" cmd = "urxvt || xterm" [/key]
 
-  [key] mod = {"Super", "Shift"} key = "q" func = "quit" [/key]
+  [key] mod = {"Control", "Alt"} key = "q" func = "quit" [/key]
   [key] mod = {"Control", "Alt"} key = "r" func = "reload" [/key]
 
   # Tag manipulation
-  [key] mod = {"Super"} key = "ampersand" func = "tag_set" cmd = "0" [/key]
-  [key] mod = {"Super"} key = "eacute" func = "tag_set" cmd = "1" [/key]
-  [key] mod = {"Super"} key = "quotedbl" func = "tag_set" cmd = "2" [/key]
-  [key] mod = {"Super"} key = "apostrophe" func = "tag_set" cmd = "3" [/key]
-  [key] mod = {"Super"} key = "parenleft" func = "tag_set" cmd = "4" [/key]
-  [key] mod = {"Super"} key = "section" func = "tag_set" cmd = "5" [/key]
-  [key] mod = {"Super"} key = "egrave" func = "tag_set" cmd = "6" [/key]
-  [key] mod = {"Super"} key = "exclam" func = "tag_set" cmd = "7" [/key]
-  [key] mod = {"Super"} key = "ccedilla" func = "tag_set" cmd = "8" [/key]
+  [key] mod = {"Super"} key = "F1" func = "tag_set" cmd = "0" [/key]
+  [key] mod = {"Super"} key = "F2" func = "tag_set" cmd = "1" [/key]
+  [key] mod = {"Super"} key = "F3" func = "tag_set" cmd = "2" [/key]
+  [key] mod = {"Super"} key = "F4" func = "tag_set" cmd = "3" [/key]
+  [key] mod = {"Super"} key = "F5" func = "tag_set" cmd = "4" [/key]
+  [key] mod = {"Super"} key = "F6" func = "tag_set" cmd = "5" [/key]
+  [key] mod = {"Super"} key = "F7" func = "tag_set" cmd = "6" [/key]
+  [key] mod = {"Super"} key = "F8" func = "tag_set" cmd = "7" [/key]
+  [key] mod = {"Super"} key = "F9" func = "tag_set" cmd = "8" [/key]
   [key] mod = {"Super"} key = "F10" func = "tag_set" cmd = "9" [/key]
 
 
-  [key] mod = {"Super", "Shift"} key = "ampersand" func = "tag_client" cmd = "0" [/key]
-  [key] mod = {"Super", "Shift"} key = "eacute" func = "tag_client" cmd = "1" [/key]
-  [key] mod = {"Super", "Shift"} key = "quotedbl" func = "tag_client" cmd = "2" [/key]
-  [key] mod = {"Super", "Shift"} key = "apostrophe" func = "tag_client" cmd = "3" [/key]
-  [key] mod = {"Super", "Shift"} key = "parenleft" func = "tag_client" cmd = "4" [/key]
-  [key] mod = {"Super", "Shift"} key = "section" func = "tag_client" cmd = "5" [/key]
-  [key] mod = {"Super", "Shift"} key = "egrave" func = "tag_client" cmd = "6" [/key]
-  [key] mod = {"Super", "Shift"} key = "exclam" func = "tag_client" cmd = "7" [/key]
-  [key] mod = {"Super", "Shift"} key = "ccedilla" func = "tag_client" cmd = "8" [/key]
+  [key] mod = {"Super", "Shift"} key = "F1" func = "tag_client" cmd = "0" [/key]
+  [key] mod = {"Super", "Shift"} key = "F2" func = "tag_client" cmd = "1" [/key]
+  [key] mod = {"Super", "Shift"} key = "F3" func = "tag_client" cmd = "2" [/key]
+  [key] mod = {"Super", "Shift"} key = "F4" func = "tag_client" cmd = "3" [/key]
+  [key] mod = {"Super", "Shift"} key = "F5" func = "tag_client" cmd = "4" [/key]
+  [key] mod = {"Super", "Shift"} key = "F6" func = "tag_client" cmd = "5" [/key]
+  [key] mod = {"Super", "Shift"} key = "F7" func = "tag_client" cmd = "6" [/key]
+  [key] mod = {"Super", "Shift"} key = "F8" func = "tag_client" cmd = "7" [/key]
+  [key] mod = {"Super", "Shift"} key = "F9" func = "tag_client" cmd = "8" [/key]
   [key] mod = {"Super", "Shift"} key = "F10" func = "tag_client" cmd = "9" [/key]
 
   [key] mod = {"Super"} key = "minus" func = "tag_del" [/key]
