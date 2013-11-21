@@ -41,50 +41,18 @@
         # Frame / Client
         client_normal_fg = "#3C3C3C"
         client_normal_bg = "#000000"
-        client_normal_statusline = "\s[right;#FDA53C; ··· ]"
-        client_sel_fg = "#BBBBBB"
+        client_normal_statusline = "\s[right;#FDA53C;]"
+        
+	client_sel_fg = "#BBBBBB"
         client_sel_bg = "#007aa5"
-        client_sel_statusline = "\s[right;#BDE077;··· Actif ]"
-        frame_bg = "#FFFFFF"
+        client_sel_statusline = "\s[right;#222222;]"
+        
+	frame_bg = "#FFFFFF"
         client_titlebar_width = 3
         client_border_width = 3
     [/theme]
 
-  [theme]
-        name = "blue"
-        font = "-xos4-terminus-medium-r-normal--12-120-72-72-c-60-iso8859-1"
-        # Bars
-        bars_width = 12
-        bars_fg = "#63b8ff"
-        bars_bg = "#222222"
-        # Element tags
-        tags_normal_fg = "#7D7D7D"
-        tags_normal_bg = "#222222"
-        #tags_normal_statusline = ""
-        tags_sel_fg = "#222222"
-        tags_sel_bg = "#63b8ff"
-        #tags_sel_statusline = ""
-        tags_occupied_fg = "#7D7D7D"
-        tags_occupied_bg = "#1A1A1A"
-        tags_occupied_statusline = "\R[0;11;20;1;#63b8ff]"
-        tags_urgent_fg = "#7D7D7D"
-        tags_urgent_bg = "#1A1A1A"
-        tags_urgent_statusline = "\R[0;11;20;1;#CC0000]\R[0;1;20;1;#CC0000]"
-        tags_border_color = "#222222"
-        tags_border_width = 0
-        # Frame / Client
-        client_normal_fg = "#7D7D7D"
-        client_normal_bg = "#222222"
-        client_normal_statusline = "\s[3;9;#7D7D7D;#](1;client_close)"
-        client_sel_fg = "#222222"
-        client_sel_bg = "#63b8ff"
-        client_sel_statusline = "\s[3;9;#222222;#](1;client_close)"
-        frame_bg = "#63b8ff"
-        client_titlebar_width = 1
-        client_border_width = 1
-  [/theme]
-
-  [theme]
+    [theme]
      # No name mean default
      name = "default"
      font = "fixed"
@@ -253,6 +221,8 @@
 [keys]
 
   [key] mod = {"Super"} key = "Return" func = "spawn" cmd = "urxvtc" [/key]
+  [key] mod = {"Super"} key = "w" func = "spawn" cmd = "firefox" [/key]
+  [key] mod = {"Super"} key = "d" func = "spawn" cmd = "thunar" [/key]
 
   [key] mod = {"Super", "Shift"} key = "q" func = "quit" [/key]
   [key] mod = {"Control", "Alt"} key = "r" func = "reload" [/key]
@@ -268,7 +238,6 @@
   [key] mod = {"Super"} key = "exclam" func = "tag_set" cmd = "7" [/key]
   [key] mod = {"Super"} key = "ccedilla" func = "tag_set" cmd = "8" [/key]
   [key] mod = {"Super"} key = "F10" func = "tag_set" cmd = "9" [/key]
-
 
   [key] mod = {"Super", "Shift"} key = "ampersand" func = "tag_client" cmd = "0" [/key]
   [key] mod = {"Super", "Shift"} key = "eacute" func = "tag_client" cmd = "1" [/key]
@@ -359,5 +328,5 @@
   [key] key = "XF86AudioRaiseVolume" func = "spawn" cmd = "amixer -c 0 set Master 3+ unmute" [/key]
 
   # Notifications
-  [key] mod = {"Super"} key = "s" func = "spawn" cmd = "twmnc -c 'notifications ··· survoler et défiler pour parcourir' --bg '#525252'"[/key]
+  # [key] mod = {"Super"} key = "s" func = "spawn" cmd = "twmnc -c 'notifications ··· survoler et défiler pour parcourir' --bg '#525252'"[/key]
 [/keys]
