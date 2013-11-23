@@ -1,15 +1,13 @@
-#
-# WMFS2 configuration file
-#
+# ===========
+# WMFS CONFIG
+# ===========
 
 # Possible file inclusion:
 # @include "file"
-
 @include "~/.config/wmfs/wmfs_rules"
 
 # Multi theme section
 [themes]
-
     [theme]
         name = "greygreen"
         font = "-artwiz-snap-*-*-*-*-10-*-*-*-*-*-iso8859-1"
@@ -51,71 +49,19 @@
         client_titlebar_width = 3
         client_border_width = 3
     [/theme]
-
     [theme]
      # No name mean default
-     name = "default"
-     font = "fixed"
-
-     # Bars
-     bars_width = 20
-     bars_fg = "#CCCCCC"
-     bars_bg = "#111111"
-
-     # Element tags
-     tags_normal_fg = "#CCCCCC"
-     tags_normal_bg = "#111111"
-     # tags_normal_statusline = ""
-
-     tags_sel_fg = "#223322"
-     tags_sel_bg = "#AABBAA"
-     # tags_sel_statusline = ""
-
-     tags_occupied_fg = "#AABBAA"
-     tags_occupied_bg = "#445544"
-     tags_occupied_statusline = "\R[0;0;100;1;#AABBAA]"
-
-     tags_urgent_fg = "#223322"
-     tags_urgent_bg = "#CC5544"
-     tags_urgent_statusline = "Gérard t'appelle !"
-
-     tags_border_color = "#112211"
-     tags_border_width = 0
-
-     # Frame / Client
-     client_normal_fg = "#1C1C1C"
-     client_normal_bg = "#1C1C1C"
-     #client_normal_statusline = ""
-
-     client_sel_fg = "#555555"
-     client_sel_bg = "#555555"
-     #client_sel_statusline = ""
-
-     # client_free_statusline = ""
-
-     frame_bg = "#1C1C1C"
-     client_titlebar_width = 10
-     client_border_width = 1
-
-   [/theme]
-
+    [/theme]
 [/themes]
 
 [bars]
-
   # Position:
-  #
-  # 0 Top
-  # 1 Bottom
-  # 2 Hide
-
+  # 0 Top / 1 Bottom / 2 Hide
   # Element type:
-  #
   # t Tags
   # s Statustext (will take available space)
   # y Systray (can be set only ONE time among all element)
   # l Launcher (will be expended at launcher use)
-
   [bar]
      name = testbar
      position = 0
@@ -123,7 +69,6 @@
      elements = "tlsy" # element order in bar
      theme = "greygreen"
   [/bar]
-
   [bar]
      name = bottom
      position = 2
@@ -131,26 +76,15 @@
      elements = "s" # element order in bar
      theme = "greygreen"
   [/bar]
-
-
-# [bar]
-# position = 0
-# screen = 1
-# elements = "ts"
-# theme = "default"
-# [/bar]
-
 [/bars]
 
 [tags]
-
   # Use no screen option or screen = -1 to set tag on each screen
   [tag]
       screen = -1
       name = " 1 "
       # statusline=""
   [/tag]
-
   [tag] name = " 2 " [/tag]
   [tag] name = " 3 " [/tag]
   [tag] name = " 4 " [/tag]
@@ -163,70 +97,43 @@
   [mouse] button = "1" func = "tag_click" [/mouse]
   [mouse] button = "4" func = "tag_next" [/mouse]
   [mouse] button = "5" func = "tag_prev" [/mouse]
-
-
 [/tags]
 
 [client]
-
   theme = "greygreen"
   key_modifier = "Super"
-
   [mouse] button = "1" func = "client_focus_click" [/mouse]
   [mouse] button = "1" func = "mouse_swap" [/mouse]
   [mouse] button = "2" func = "mouse_tab" [/mouse]
   [mouse] button = "3" func = "mouse_resize" [/mouse]
   [mouse] button = "4" func = "client_focus_next_tab" [/mouse]
   [mouse] button = "5" func = "client_focus_prev_tab" [/mouse]
-
   padding = 14
-
 [/client]
 
 #[rules]
-#
-# [rule]
-# instance = "chromium"
-#
-# # role = ""
-# # name = ""
-# # theme = "default"
-#
-# tag = 1 # 2nd tag
-# screen = 0
-#
-# free = false
-# tab = false
-# ignore_tag = false
-# [/rule]
-#
+# see wmfs_rules
 #[/rules]
 
 [launchers]
-
   # command can be an uicb function or an uicb function + extension (see example)
   [launcher]
      name = "exec"
      prompt = " Run:"
-
-     # Example of uicb + ext:
-     # command = "spawn xterm -e"
      command = "spawn"
-
-     width = 150
+     width = 300
   [/launcher]
-
 [/launchers]
 
 [keys]
-
+  [key] mod = {"Super"} key = "space" func = "launcher" cmd = "exec" [/key]
   [key] mod = {"Super"} key = "Return" func = "spawn" cmd = "urxvtc" [/key]
   [key] mod = {"Super"} key = "w" func = "spawn" cmd = "firefox" [/key]
   [key] mod = {"Super"} key = "d" func = "spawn" cmd = "thunar" [/key]
-
   [key] mod = {"Super", "Shift"} key = "q" func = "quit" [/key]
   [key] mod = {"Control", "Alt"} key = "r" func = "reload" [/key]
-
+  [key] mod = {"Super"} key = "q" func = "client_close" [/key]
+  
   # Tag manipulation
   [key] mod = {"Super"} key = "ampersand" func = "tag_set" cmd = "0" [/key]
   [key] mod = {"Super"} key = "eacute" func = "tag_set" cmd = "1" [/key]
@@ -252,17 +159,10 @@
 
   [key] mod = {"Super"} key = "minus" func = "tag_del" [/key]
   [key] mod = {"Super", "Shift"} key = "minus" func = "tag_new" [/key]
-
-  # tag function: cmd = nameofthetag
-  #[key] mod = {"Super"} key = "z" func = "tag" cmd = "2" [/key]
-
   [key] mod = {"Control"} key = "Right" func = "tag_next" [/key]
   [key] mod = {"Control"} key = "Left" func = "tag_prev" [/key]
-
   [key] mod = {"Control"} key = "Up" func = "screen_next" [/key]
   [key] mod = {"Control"} key = "Down" func = "screen_prev" [/key]
-
-  [key] mod = {"Super"} key = "q" func = "client_close" [/key]
 
   # Focus next / prev client and next / prev tabbed client
   [key] mod = { "Alt" } key = "Tab" func = "client_focus_next" [/key]
@@ -270,13 +170,11 @@
   [key] mod = { "Super" } key = "Tab" func = "client_focus_next_tab" [/key]
   [key] mod = { "Super", "Shift" } key = "Tab" func = "client_focus_prev_tab" [/key]
 
-  # Focus next client with direction
+  # Focus next client with direction / swap clients
   [key] mod = {"Shift"} key = "Left" func = "client_focus_left" [/key]
   [key] mod = {"Shift"} key = "Right" func = "client_focus_right" [/key]
   [key] mod = {"Shift"} key = "Up" func = "client_focus_top" [/key]
   [key] mod = {"Shift"} key = "Down" func = "client_focus_bottom" [/key]
-
-  # swap next client with direction:
   [key] mod = {"Control", "Shift"} key = "Left" func = "client_swap_left" [/key]
   [key] mod = {"Control", "Shift"} key = "Right" func = "client_swap_right" [/key]
   [key] mod = {"Control", "Shift"} key = "Up" func = "client_swap_top" [/key]
@@ -293,18 +191,18 @@
   [key] mod = {"Super", "Control"} key = "Down" func = "client_resize_bottom" cmd = "20" [/key]
 
   # Tabbing command
-  [key] mod = {"Alt", "Shift"} key = "h" func = "client_tab_left" [/key]
-  [key] mod = {"Alt", "Shift"} key = "l" func = "client_tab_right" [/key]
-  [key] mod = {"Alt", "Shift"} key = "k" func = "client_tab_top" [/key]
-  [key] mod = {"Alt", "Shift"} key = "j" func = "client_tab_bottom" [/key]
-  [key] mod = {"Alt", "Shift"} key = "u" func = "client_untab" [/key]
-  [key] mod = {"Super"} key = "t" func = "client_tab_next_opened" [/key]
+  # [key] mod = {"Alt", "Shift"} key = "h" func = "client_tab_left" [/key]
+  # [key] mod = {"Alt", "Shift"} key = "l" func = "client_tab_right" [/key]
+  # [key] mod = {"Alt", "Shift"} key = "k" func = "client_tab_top" [/key]
+  # [key] mod = {"Alt", "Shift"} key = "j" func = "client_tab_bottom" [/key]
+  # [key] mod = {"Alt", "Shift"} key = "u" func = "client_untab" [/key]
+  # [key] mod = {"Super"} key = "t" func = "client_tab_next_opened" [/key]
 
   # Layout manipulation
   [key] mod = {"Super"} key = "m" func = "layout_vmirror" [/key]
-  [key] mod = {"Super", "Shift"} key = "m" func = "layout_hmirror" [/key]
   [key] mod = {"Super"} key = "r" func = "layout_rotate_right" [/key]
-  [key] mod = {"Super", "Shift"} key = "r" func = "layout_rotate_left" [/key]
+  # [key] mod = {"Super", "Shift"} key = "m" func = "layout_hmirror" [/key]
+  # [key] mod = {"Super", "Shift"} key = "r" func = "layout_rotate_left" [/key]
 
   [key] mod = {"Control", "Super", "Alt"} key = "Left" func = "layout_integrate_left" [/key]
   [key] mod = {"Control", "Super", "Alt"} key = "Down" func = "layout_integrate_bottom" [/key]
@@ -318,15 +216,10 @@
   # Toggle client free/tile
   [key] mod = {"Super"} key = "f" func = "client_toggle_free" [/key]
 
-  # Launcher
-  [key] mod = {"Super"} key = "p" func = "launcher" cmd = "exec" [/key]
-
   # Touches Multimédias
   [key] key = "XF86AudioPlay" func = "spawn" cmd = "ncmpcpp toggle" [/key]
   [key] key = "XF86AudioMute" func = "spawn" cmd = "amixer sset Master toggle" [/key]
   [key] key = "XF86AudioLowerVolume" func = "spawn" cmd = "amixer -c 0 set Master 3- unmute" [/key]
   [key] key = "XF86AudioRaiseVolume" func = "spawn" cmd = "amixer -c 0 set Master 3+ unmute" [/key]
 
-  # Notifications
-  # [key] mod = {"Super"} key = "s" func = "spawn" cmd = "twmnc -c 'notifications ··· survoler et défiler pour parcourir' --bg '#525252'"[/key]
 [/keys]

@@ -21,7 +21,7 @@
     [/rule]
     [rule]
         class = "Gimp"
-        free = true
+        free = false
     [/rule]
     [rule]
         class = "XCalc"
