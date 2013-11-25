@@ -42,12 +42,12 @@
         client_normal_statusline = "\s[right;#FDA53C;]"
         
 	client_sel_fg = "#BBBBBB"
-        client_sel_bg = "#007aa5"
+        client_sel_bg = "#04313D"
         client_sel_statusline = "\s[right;#222222;]"
         
 	frame_bg = "#FFFFFF"
-        client_titlebar_width = 3
-        client_border_width = 3
+        client_titlebar_width = 2
+        client_border_width = 2 
     [/theme]
     [theme]
      # No name mean default
